@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>01. WebGL Draw Test</title>
+</head>
+<body>
+	<div class="wrapper">
+		<canvas id="stage"></canvas>
+	</div>
+	<script type="text/javascript">
+
+		(function( global ){
+
+			function App(){
+
+			}
+
+			App.prototype = {
+
+				constructor: App,
+
+				run: function( stageID ){
+					
+					this.gl = document.getElementById( stageID ).getContext( "webgl" );
+					console.log( this.gl );
+				}
+			};
+
+			Object.defineProperties( App.prototype, {
+
+				canvas: {
+					get: function(){
+						return this.gl.canvas;
+					}
+				}
+			});
+
+			global.App = App;
+
+		})( window );
+
+		var app;
+
+		window.onload = function(){
+
+			app = new App();
+			app.run( "stage" );
+		}
+
+	</script>
+</body>
+</html>
