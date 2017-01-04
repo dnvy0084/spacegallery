@@ -1,6 +1,13 @@
 <html>
 <head>
 	<title>01. WebGL Draw Test</title>
+	<style type="text/css">
+		
+		body{
+			margin: 0 0 0 0;
+		}
+
+	</style>
 </head>
 <body>
 	<div class="wrapper">
@@ -12,6 +19,7 @@
 
 			function App(){
 
+				this.onResize = this.onResize.bind(this);
 			}
 
 			App.prototype = {
@@ -21,8 +29,16 @@
 				run: function( stageID ){
 					
 					this.gl = document.getElementById( stageID ).getContext( "webgl" );
-					console.log( this.gl );
-				}
+
+					this.onResize();
+					global.addEventListener( "resize", this.onResize );
+				},
+
+				onResize: function(){
+					
+					this.canvas.width = global.innerWidth;
+					this.canvas.height = global.innerHeight;
+				},
 			};
 
 			Object.defineProperties( App.prototype, {
