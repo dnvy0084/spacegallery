@@ -1,0 +1,22 @@
+{
+  "name": "spacegallery",
+  "version": "1.0.0",
+  "description": "space gallery - webgl gallery sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnvy0084/spacegallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnvy0084/spacegallery/issues"
+  },
+  "homepage": "https://github.com/dnvy0084/spacegallery#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
